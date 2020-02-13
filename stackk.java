@@ -1,0 +1,72 @@
+class stackk
+{
+	int [] arr;
+	int top;
+	stackk()
+	{
+		top=-1;
+		arr=new int[10];
+		
+	}
+	void push(int x)
+	{
+		if(top==arr.length-1)
+		{
+         System.out.println("Overflow" ); 
+		return;
+		}
+		top++;
+		//System.out.print(x);
+		arr[top]=x;
+	}
+	int pop()
+	{
+		if(top==-1)
+		{
+			System.out.println("Underflow!");
+			return -1;
+		}
+		int and=arr[top];top--;
+		return and;
+	}
+	int peek()
+	{
+		if(top==-1)
+			return top;
+
+		return arr[top];
+	}
+
+	boolean isEmpty()
+	{
+		if(top==-1)
+			return true;
+		else return false;
+	}
+
+	void display()
+	{
+		if(top==-1)
+		{
+			System.out.println("element");
+			return;
+		}
+		
+		for(int i =top;i>=0;i--)
+			System.out.println(arr[i]);
+	}
+
+	public static void main(String[] args) 
+	{
+		stackk ob = new stackk();
+		//ob.stack();
+		ob.push(3);
+		ob.push(4);
+		ob.push(6);
+		ob.push(7);
+		ob.pop();
+		ob.display();
+		System.out.println("my topmost element is "+ob.peek());
+		System.out.println("is my stack empty? "+ob.isEmpty());
+	}
+}

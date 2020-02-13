@@ -1,0 +1,42 @@
+import java.util.*;
+class Lexoo
+{
+public static void main(String[] ar)
+{
+int n =14;
+System.out.println(lexoo(n));
+}
+public static List<Integer> lexoo(int n) {
+    List<String> l = new ArrayList<>();
+    for(int i=1;i<=n;i++){
+        l.add(String.valueOf(i));
+    }
+ 
+    Collections.sort(l, new Comparator<String>()
+		{
+        public int compare(String a, String b){
+            int i=0;
+            while(i<a.length()&&i<b.length()){
+                if(a.charAt(i)!=b.charAt(i)){
+                    return a.charAt(i)-b.charAt(i);
+                }
+                i++;
+            }
+ 
+            if(i>=a.length()){
+                return -1;
+            }
+ 
+            return 1;
+        }
+    });
+ 
+    List<Integer> r = new ArrayList<>();
+    for(String s: l){
+        //r.add(s);
+		r.add(Integer.parseInt(s));
+    }
+ 
+    return r;
+}
+}

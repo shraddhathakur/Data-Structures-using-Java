@@ -1,0 +1,10 @@
+
+import java.util.*;
+public class Excepclass {
+    public static void main(String args[]){
+      int a =12451234512345;
+System.out.println(a);
+		} 
+        
+    
+}

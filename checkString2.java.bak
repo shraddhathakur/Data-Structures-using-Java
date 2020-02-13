@@ -1,0 +1,20 @@
+import java.util.*;
+class checkString2
+{
+	static boolean findDuplicate(String str)
+	{
+		HashSet<Character> hs = new HashSet<>();
+		for(int i =0;i<str.length();i++)
+		{
+			if(hs.add(str.charAt(i)) == false)
+				return false;
+		}
+		 return true;
+	}
+	public static void main(String[] args) 
+	{
+		checkString2 o= new checkString2();
+
+		System.out.println(o.findDuplicate("hello"));
+	}
+}

@@ -1,0 +1,44 @@
+import java.util.*; 
+class Sort  
+{ 
+  
+ 
+static void sortWithRemainderP(int arr[], int n, int k, int p)  
+{  
+
+    Vector<Integer> v1 = new Vector<Integer>(); 
+    Vector<Integer> v2 = new Vector<Integer>();  
+  
+    for (int i = 0; i < n; i++) 
+    {  
+        if (arr[i] % k == p)  
+        {  
+  
+            v1.add(i);  
+  
+           
+            v2.add(arr[i]);  
+        }  
+    }  
+  
+
+    Collections.sort(v2);  
+  
+
+    for (int i = 0; i < v1.size(); i++)  
+        arr[v1.get(i)] = v2.get(i);  
+  
+    for (int i = 0; i < n; i++)  
+            System.out.print(arr[i]+" "); 
+}  
+
+public static void main(String[] args)  
+{ 
+    int arr[] = {12,18,17,65,46 };  
+    int n = arr.length;  
+    int k = 2 ;  
+    int p = 0;  
+  
+    sortWithRemainderP(arr, n, k, p); 
+    } 
+}  

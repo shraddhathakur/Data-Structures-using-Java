@@ -1,0 +1,9 @@
+void preOrder(Node root)
+{
+if (root == null)
+return ;
+		 	(vlr) preorder	(lrv)PostOrder	 (lvr)InOrder
+sop(root.data);			1	   2		   2
+preOrder(root.left);		2	   3		   1
+preOrder(root.right);		3	   1		   3
+}

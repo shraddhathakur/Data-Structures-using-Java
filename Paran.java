@@ -1,0 +1,44 @@
+import java.util.*;
+class Paran 
+{
+	boolean isbalanced(String str)
+	{
+		char ch[] = str.toCharArray();
+		Stack<Character> s = new Stack<>();
+		for(int i =0;i<ch.length;i++)
+		{
+			if(ch[i]=='(' || ch[i]=='[' || ch[i]=='{')
+				s.push(ch[i]);
+			if(ch[i]==')' || ch[i]==']' || ch[i]=='}')
+			{
+				if(s.isEmpty()==true)
+					return false;
+				if(match(s.pop(),ch[i])==false)
+					return false;
+			}
+		}
+			if(s.isEmpty()==false)
+				return false;
+			else 
+				return true;
+		}
+
+		boolean match(char a , char b )
+	{
+			if(a == '(' && b == ')')
+				return true;
+			if(a == '[' && b == ']')
+				return true;
+			if(a == '{' && b == '}')
+				return true;
+			else 
+				return false;
+	}
+
+	public static void main(String[] args) 
+	{
+		Paran ob = new Paran();
+		System.out.print(ob.isbalanced("(()"));
+
+	}
+}
